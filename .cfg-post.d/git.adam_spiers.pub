@@ -13,9 +13,16 @@ if [[ "$ZDOTUSER" == adam.spiers ]]; then
 fi
 
 # https://github.com/SUSE/cloud/blob/master/docs/dev_env/git-config-use-gpg.md
-git config --global log.showSignature true
+# suggests the following settings; however there are problems:
+#
+# https://github.com/SUSE/cloud/issues/244
+# (git log.showSignature may cause git log consuming applications to slow down)
+#git config --global log.showSignature true
+#
 git config --global transfer.fsckobjects true
-git config --global merge.verifySignatures true
+#
+# Not many people use GPG signatures, so this will cause failures:
+#git config --global merge.verifySignatures true
 
 . ~/lib/libhost.sh
 read_localhost_nickname
