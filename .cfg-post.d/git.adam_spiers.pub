@@ -53,6 +53,13 @@ github_rw_url=git@github.com:aspiers/
 git url-rewrite    github:   $github_ro_url
 git url-rewrite -p github:   $github_rw_url
 
+#gitlab_ro_url=git://gitlab.com/aspiers/ # untested
+gitlab_ro_url=https://gitlab.com/
+gitlab_rw_url=git@gitlab.com:aspiers/
+
+git url-rewrite    gitlab:   $gitlab_ro_url
+git url-rewrite -p gitlab:   $gitlab_rw_url
+
 # read-only URL doesn't work with private repositories
 # so provide a different alias to make sure fetch works
 git url-rewrite    githubrw: $github_rw_url
