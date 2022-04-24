@@ -47,12 +47,12 @@ fi
 # either ~/.netrc or git-credential-cache - why bother
 # when I already have ssh-agent working nicely?
 # Answer: only worth it when ssh is being blocked
-github_ro_url=https://github.com/aspiers/
+github_ro_url=git@github.com:aspiers/
 #github_ro_url=https://github.com/aspiers/
 github_rw_url=git@github.com:aspiers/
 
 git url-rewrite    github:   $github_ro_url
-git url-rewrite -p github:   $github_rw_url
+#git url-rewrite -p github:   $github_rw_url
 
 #gitlab_ro_url=git://gitlab.com/aspiers/ # untested
 gitlab_ro_url=https://gitlab.com/
@@ -63,7 +63,7 @@ git url-rewrite -p gitlab:   $gitlab_rw_url
 
 # read-only URL doesn't work with private repositories
 # so provide a different alias to make sure fetch works
-git url-rewrite    githubrw: $github_rw_url
+#git url-rewrite    githubrw: $github_rw_url
 
 git url-rewrite    gitorious: git://gitorious.org/~aspiers/
 #git url-rewrite    gitorious: https://git.gitorious.org/~aspiers/
